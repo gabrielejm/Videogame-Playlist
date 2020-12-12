@@ -33,11 +33,11 @@ module.exports = function(sequelize, DataTypes) {
     );
   });
 
-  User.associate = (models) => {
+  User.associate = models => {
     User.hasOne(models.List, {
       onDelete: "cascade"
-    })
-  } 
-  
+    });
+  };
+
   return User;
 };
