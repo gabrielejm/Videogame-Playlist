@@ -36,7 +36,9 @@ $(document).ready(() => {
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    //added displayable error returned from the response
+    $("#alert .msg").text(JSON.stringify(err.responseJSON.errors[0].message));
     $("#alert").fadeIn(500);
+    console.log(err.responseJSON)
   }
 });
