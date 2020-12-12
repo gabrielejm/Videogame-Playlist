@@ -1,5 +1,3 @@
-const { sequelize } = require(".");
-
 module.exports = (sequelize, Datatypes) => {
     const List = sequelize.define("User_List", {
         // Game Title can't be Null
