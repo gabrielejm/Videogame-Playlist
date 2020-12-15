@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = app => {
   app.get("/api/user_data/:user", (req, res) => {
-    db.List.findAll({where: { user: req.params.user
+    db.List.findAll({where: { user_id: req.params.user
     }}).then(dbList => {
       res.json(dbList)
     } )
@@ -24,11 +24,11 @@ module.exports = app => {
       } )
   })
 
-  app.post("/api/user_data/:user/:status/:title", (req, res) => {
+  app.post("/api/user_data/list", (req, res) => {
     db.List.create({
       title: req.body.title,
-      status: req.params.status,
-      user: req.params.user
+      status: req.body.status,
+      user: req.body.user
     })
       .then(() => {
         res.redirect(307, "api/user_data/:user");
@@ -38,11 +38,12 @@ module.exports = app => {
       });
   });
 
-  app.delete("/api/user_data/list/:title", (req, res) => {
+  app.delete("/api/user_data/list", (req, res) => {
     db.List.destroy(
       {
         where: {
-          title: req.params.title,
+          title: req.body.title,
+          user_id: req.body.user
         },
       },
       console.log("deleting game...")

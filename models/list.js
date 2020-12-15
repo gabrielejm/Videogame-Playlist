@@ -11,7 +11,8 @@ module.exports = (sequelize, Datatypes) => {
     type: Datatypes.STRING,
     // Optional Categories
     hoursPlayed: Datatypes.INTEGER,
-    rating: Datatypes.INTEGER
+    rating: Datatypes.INTEGER,
+    user_id: Datatypes.INTEGER
   });
 
   List.associate = models => {
