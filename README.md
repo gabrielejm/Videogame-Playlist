@@ -39,7 +39,12 @@ Conor McKoy, Danielle W., Dairon Ferrer, Ben Cummings, Justin Gabriele
 
 Have some questions? Contact us at: 
 
-Github links: [Justin Gabriele](https://github.com/gabrielejm)
+Github links:
+[Conor McKoy](https://github.com/mckoyc94)
+[Danielle W.](https://github.com/dawisen)
+[Dairon Ferrer](https://github.com/daironferrer)
+[Ben Cummings](https://github.com/Bcummings32)
+[Justin Gabriele](https://github.com/gabrielejm)
 
 Emails: 
 
