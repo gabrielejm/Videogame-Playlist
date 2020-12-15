@@ -50,4 +50,18 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.delete("/api/user_data/:id", (req, res) => {
+    db.User.destroy(
+      {
+        where: {
+          id: req.params.id
+        }
+      },
+      console.log("deleting user data...")
+    ).then(dbUserData => {
+      res.json(dbUserData);
+      console.log("user data updated!");
+    });
+  });
 };

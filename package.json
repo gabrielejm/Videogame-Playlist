@@ -1,8 +1,17 @@
 {
-  "name": "1PassportExample",
+  "name": "passportexample",
   "version": "1.0.0",
   "description": "app that does things",
   "main": "server.js",
+
+  "production": {
+    "username": "root",
+    "password": "root",
+    "database": "passport_demo",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
   "scripts": {
     "test": "npm run lint",
     "start": "node server.js",
