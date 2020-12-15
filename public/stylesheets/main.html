@@ -1,75 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-</head>
-<!-- UIkit CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/css/uikit.min.css" />
+  </head>
+  <!-- UIkit CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/css/uikit.min.css"
+  />
 
-<!-- UIkit JS -->
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit-icons.min.js"></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit-icons.min.js"></script>
 
-<link rel="stylesheet" href="style.css"/>
-<body>
-
-
-
-<nav class="uk-navbar-container" uk-navbar>
-
-    <div class="nav-overlay uk-navbar-left">
-
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="nav-overlay uk-navbar-left">
         <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="#">Home</a></li>
-            <li><a href="#">Playlist</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Sign Up</a></li>
+          <li class="uk-active"><a href="#">Home</a></li>
+          <li><a href="#">Playlist</a></li>
+          <li><a href="#">Log In</a></li>
+          <li><a href="#">Sign Up</a></li>
         </ul>
+      </div>
 
-    </div>
+      <div class="nav-overlay uk-navbar-right">
+        <a
+          class="uk-navbar-toggle"
+          uk-search-icon
+          uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
+          href="#"
+        ></a>
+      </div>
 
-    <div class="nav-overlay uk-navbar-right">
-
-        <a class="uk-navbar-toggle" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-
-    </div>
-
-    <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
-
+      <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
         <div class="uk-navbar-item uk-width-expand">
-            <form class="uk-search uk-search-navbar uk-width-1-1">
-                <input class="uk-search-input" type="search" placeholder="Search for a videogame..." autofocus>
-            </form>
+          <form class="uk-search uk-search-navbar uk-width-1-1">
+            <input
+              class="uk-search-input"
+              type="search"
+              placeholder="Search for a videogame..."
+              autofocus
+            />
+          </form>
         </div>
 
-        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+        <a
+          class="uk-navbar-toggle"
+          uk-close
+          uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
+          href="#"
+        ></a>
+      </div>
+    </nav>
 
+    <container id="headers">
+      <div
+        class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+        data-src="https://www.dailydot.com/wp-content/uploads/fd9/9a/54fc501b9ddb414640e67e059b2d3346.jpg"
+        uk-img
+      >
+        <h1 class="uk-text-bolder">Videogame Playlist</h1>
+      </div>
+    </container>
+
+    <p class="uk-text-large uk-padding-small">
+      Use our videogame search engine to get general information about your
+      favorite videogames and add them to your playlist.
+    </p>
+
+    <form class="uk-search uk-search-large">
+      <span uk-search-icon></span>
+      <input
+        class="uk-search-input"
+        type="search"
+        placeholder="Search for a Game..."
+      />
+    </form>
+
+    <div
+      class="uk-column-1-2 uk-column-divider uk-padding-small uk-margin-large-top"
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris.
+      </p>
+
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+      </p>
     </div>
-
-</nav>
-
-<container id="headers">
-<div class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="messycontrollers2.jpg" uk-img>
-    <h1 class="uk-text-bolder">Videogame Playlist</h1>
-  </div>
-</container>
-
-<p class="uk-text-large uk-padding-small">Use our videogame search engine to get general information about your favorite videogames and add them to your playlist.</p>
-
-<form class="uk-search uk-search-large">
-    <span uk-search-icon></span>
-    <input class="uk-search-input" type="search" placeholder="Search for a Game...">
-</form>
-
-<div class="uk-column-1-2 uk-column-divider uk-padding-small uk-margin-large-top">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-
-    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
-</div>
-
-</body>
+  </body>
 </html>
