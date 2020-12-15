@@ -41,13 +41,13 @@ Have some questions? Contact us at:
 
 Github links and emails:
 
-[Conor McKoy](https://github.com/mckoyc94)
+[Conor McKoy](https://github.com/mckoyc94), mckoyc@gmail.com
 
-[Danielle W.](https://github.com/dawisen)
+[Danielle W.](https://github.com/dawisen), daniellewwise@gmail.com
 
-[Dairon Ferrer](https://github.com/daironferrer)
+[Dairon Ferrer](https://github.com/daironferrer), daironferrer7@gmail.com
 
-[Ben Cummings](https://github.com/Bcummings32)
+[Ben Cummings](https://github.com/Bcummings32), bncmmngs@aol.com
 
 [Justin Gabriele](https://github.com/gabrielejm), gabrielejustin@yahoo.com
 
