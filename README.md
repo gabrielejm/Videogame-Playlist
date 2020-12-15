@@ -37,9 +37,9 @@ Conor McKoy, Danielle W., Dairon Ferrer, Ben Cummings, Justin Gabriele
 
 ### Questions?<a name="questions"></a>
 
-Have some questions? Contact me at:
+Have some questions? Contact us at: 
 
-Github: [](https://github.com/)
+Github links: [Justin Gabriele](https://github.com/)
 
-Email: 
+Emails: 
 
