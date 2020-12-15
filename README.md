@@ -40,6 +40,7 @@ Conor McKoy, Danielle W., Dairon Ferrer, Ben Cummings, Justin Gabriele
 Have some questions? Contact us at: 
 
 Github links:
+
 [Conor McKoy](https://github.com/mckoyc94)
 
 [Danielle W.](https://github.com/dawisen)
