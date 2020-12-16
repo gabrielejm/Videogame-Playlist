@@ -21,7 +21,7 @@ An app that will allow the user to search for a specific video game and receive 
 
 ### Contributing<a name="contributing"></a>
 
-Conor McKoy, Danielle W., Dairon Ferrer, Ben Cummings, Justin Gabriele
+Conor McKoy, Danielle Wisen, Dairon Ferrer, Ben Cummings, Justin Gabriele
 
 ### Tests<a name="tests"></a>
 
