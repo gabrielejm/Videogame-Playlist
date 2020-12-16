@@ -39,7 +39,7 @@ Github links and emails:
 
 [Conor McKoy](https://github.com/mckoyc94), mckoyc@gmail.com
 
-[Danielle W.](https://github.com/dawisen), daniellewwise@gmail.com
+[Danielle Wisen](https://github.com/dawisen), daniellewwise@gmail.com
 
 [Dairon Ferrer](https://github.com/daironferrer), daironferrer7@gmail.com
 
