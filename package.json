@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "app that does things",
   "main": "server.js",
-
   "production": {
     "username": "root",
     "password": "root",

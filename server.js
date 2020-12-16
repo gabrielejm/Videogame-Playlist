@@ -27,6 +27,7 @@ require("./routes/api-routes.js")(app);
 require("./routes/list-api-routes")(app);
 
 // Syncing our database and logging a message to the user upon success
+console.log("db.sequelize:", db.sequelize);
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(
