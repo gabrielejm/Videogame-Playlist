@@ -1,7 +1,7 @@
-{
+module.exports = {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": process.env.DB_PASSWORD,
     "database": "Videogamelist",
     "host": "127.0.0.1",
     "dialect": "mysql"
