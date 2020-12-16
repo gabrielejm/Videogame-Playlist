@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, Datatypes) => {
   const List = sequelize.define("List", {
     // Game Title can't be Null
@@ -24,5 +25,6 @@ module.exports = (sequelize, Datatypes) => {
     });
   };
 
-  return List;
+
+ return List;
 };
