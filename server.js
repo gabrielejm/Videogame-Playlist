@@ -1,9 +1,9 @@
+require("dotenv").config();
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
-require("dotenv").config();
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -27,7 +27,6 @@ require("./routes/api-routes.js")(app);
 require("./routes/list-api-routes")(app);
 
 // Syncing our database and logging a message to the user upon success
-console.log("db.sequelize:", db.sequelize);
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(

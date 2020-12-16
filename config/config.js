@@ -1,8 +1,7 @@
-console.log("process.env.DB_PASSWORD:", process.env.DB_PASSWORD);
 module.exports = {
   development: {
     username: "root",
-    password: "password",
+    password: process.env.DB_PASSWORD,
     database: "Videogamelist",
     host: "127.0.0.1",
     dialect: "mysql",
