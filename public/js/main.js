@@ -1,7 +1,10 @@
 $(document).ready(function () {
-    let user = localStorage.getItem("user")
+    const searchBtn = $("")
+    const addBtn = $("")
+    const game = $("")
+    const status = $("")
+    const user = localStorage.getItem("user")
 
-    console.log(user)
 
     $(".input").blur(function () {
         localStorage.setItem("Teams", $(this).val());
@@ -11,6 +14,14 @@ $(document).ready(function () {
          }  
 
         //Divs for description and rating
-        const description = $(`   <div id= 'match1'>`)})
+        const description = $(`   <div id= 'match1'>`)
+    })
+
+    addBtn.on("click", () => {
+        $.post(`/api/user_data/list/${user}`)
+        .then(() => {
+            alert(`${game} added to List`)
+        })
+    })
 })
 

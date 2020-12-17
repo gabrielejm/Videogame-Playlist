@@ -13,7 +13,7 @@ module.exports = (sequelize, Datatypes) => {
     // Optional Categories
     hoursPlayed: Datatypes.INTEGER,
     rating: Datatypes.INTEGER,
-    // userId: Datatypes.INTEGER,
+    user: Datatypes.INTEGER,
   });
 
   List.associate = models => {
