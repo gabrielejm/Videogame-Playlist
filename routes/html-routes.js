@@ -7,7 +7,7 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   
   //displays the mainpage html file on root directory
-  app.get("/", (req, res) => {
+  app.get("/", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/main.html"));
   });
   
