@@ -1,9 +1,10 @@
+
 module.exports = (sequelize, Datatypes) => {
-  const List = sequelize.define("User_List", {
+  const List = sequelize.define("List", {
     // Game Title can't be Null
     title: {
       type: Datatypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     // Must choose a game status of "Completed, Currently Playing, Dropped, Want to Play"
     status: { type: Datatypes.STRING, allowNull: false },
@@ -12,17 +13,18 @@ module.exports = (sequelize, Datatypes) => {
     // Optional Categories
     hoursPlayed: Datatypes.INTEGER,
     rating: Datatypes.INTEGER,
-    user_id: Datatypes.INTEGER
+    // userId: Datatypes.INTEGER,
   });
 
   List.associate = models => {
     // Must be User attached to List
     List.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
-      }
+        allowNull: false,
+      },
     });
   };
 
-  return List;
+
+ return List;
 };
