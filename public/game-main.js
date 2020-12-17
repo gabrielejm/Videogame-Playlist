@@ -4,7 +4,7 @@ $(document).ready(function(){
         event.preventDefault();
     
 
-let city = $("#search-input").val();
+let game = $("#search-input").val();
     
         getDescription(game);
     });
@@ -28,7 +28,7 @@ let city = $("#search-input").val();
        
          function getDescription(game) {
             let APIKey = "830ae949e6554aadae74c234f1e467ee";
-            const queryURL = ""
+            const queryURL = "https://api.rawg.io/api/games"
 
             $.ajax({
                     url: queryURL,
