@@ -1,71 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Passport Authentication</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/css/uikit.min.css"
+    />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
-</head>
-
-<body>
-  <nav class="uk-navbar-container" uk-navbar>
-
-    <div class="nav-overlay uk-navbar-left">
-
+  <body>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="nav-overlay uk-navbar-left">
         <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="main.html">Home</a></li>
-            <li><a href="playlist.html">Playlist</a></li>
-            <li><a href="login.html">Log In</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
+          <li class="uk-active"><a href="main.html">Home</a></li>
+          <li><a href="playlist.html">Playlist</a></li>
+          <li><a href="login.html">Log In</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
         </ul>
+      </div>
 
-    </div>
+      <div class="nav-overlay uk-navbar-right">
+        <a
+          class="uk-navbar-toggle"
+          uk-search-icon
+          uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
+          href="#"
+        ></a>
+      </div>
 
-    <div class="nav-overlay uk-navbar-right">
-
-        <a class="uk-navbar-toggle" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-
-    </div>
-
-    <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
-
+      <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
         <div class="uk-navbar-item uk-width-expand">
-            <form class="uk-search uk-search-navbar uk-width-1-1">
-                <input class="uk-search-input" type="search" placeholder="Search for a videogame..." autofocus>
-            </form>
+          <form class="uk-search uk-search-navbar uk-width-1-1">
+            <input
+              class="uk-search-input"
+              type="search"
+              placeholder="Search for a videogame..."
+              autofocus
+            />
+          </form>
         </div>
 
-        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-
-    </div>
-
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Login Form</h2>
-        <form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
-        <br />
-        <p>Or sign up <a href="signup.html">here</a></p>
+        <a
+          class="uk-navbar-toggle"
+          uk-close
+          uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
+          href="#"
+        ></a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>Login Form</h2>
+          <form class="login">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email-input"
+                placeholder="Email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password-input"
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit" class="btn btn-default">Login</button>
+          </form>
+          <br />
+          <p>Or sign up <a href="signup.html">here</a></p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
-
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+  </body>
 </html>
