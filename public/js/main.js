@@ -7,5 +7,6 @@ $(document).ready(function () {
          }  
 
         //Divs for description and rating
-        const description = $(`   <div id= 'match1'>
+        const description = $(`   <div id= 'match1'>`)})
+})
 
