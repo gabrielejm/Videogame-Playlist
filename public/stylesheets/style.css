@@ -2,3 +2,12 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+#search-btn {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.adjust-margin {
+  margin-left: 10px;
+}
