@@ -5,7 +5,13 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  app.get("/", (req, res) => {
+  
+  //displays the mainpage html file on root directory
+  app.get("/", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/main.html"));
+  });
+  
+  app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
@@ -26,4 +32,8 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  app.get("/playlist", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/playlist.html"))
+  })
 };
