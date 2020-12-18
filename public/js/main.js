@@ -22,13 +22,8 @@ $(document).ready(() => {
         method: "GET",
         url: queryUrl
         }).then( function(data){
-            console.log("game: ", game)
-            console.log("data: ", data.results[0].name)
-            for (let i = 0; i < 5; i++){
-                let title = data.results[i].name
-                let released = data.results[i].released
-                let rating = `${data.results[i].rating} / 5`
-            }         
+                let title = data.results[0].name
+                let rating = `${data.results[0].rating} / 5`         
         })
     })
 })
