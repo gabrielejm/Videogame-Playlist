@@ -2,7 +2,7 @@ $(document).ready(()=>{
     const addRating = $("")
     const addHoursPlayed = $("")
     const addType = $("")
-    const updateGame = $("")
+    const updateGame = $("button.updateBtn");
     const user = localStorage.getItem("user")
 
     renderList = () => {
@@ -24,4 +24,10 @@ $(document).ready(()=>{
     }
 
     renderList() 
+
+    updateGame.click(() => {
+        var status = $("input.gameStatus").val();
+        console.log(status);
+        $.put("/api/game")
+    });
 })

@@ -85,20 +85,72 @@
         veniam, quis nostrud exercitation ullamco laboris.
       </p>
 
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-
-      <p>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-        ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore.
-      </p>
+    <h3>Sorting Options:</h3>
+    <div class="uk-button-group">
+      <button class="uk-button uk-button-default">Sort By</button>
+      <div class="uk-inline">
+        <button class="uk-button uk-button-default" type="button">
+          <span uk-icon="icon:  triangle-down"></span>
+        </button>
+        <div
+          uk-dropdown="mode: click; boundary: ! .uk-button-group; boundary-align: true;"
+        >
+          <ul class="uk-nav uk-dropdown-nav">
+            <li class="uk-active"><a href="#">Sort By</a></li>
+            <li><a href="#">Currently Playing</a></li>
+            <li><a href="#">Want to Play</a></li>
+            <li><a href="#">Completed</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <div class="container">
+      <div class="uk-overflow-auto uk-margin-top">
+        <table class="uk-table uk-table-middle uk-table-divider">
+          <thead>
+            <tr>
+              <th class="uk-width-small">Title</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Hours Played</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <div class="gameTitle"><td>Call of Duty: Cold War</td></div>
+              <div class="gameStatus">
+                <td>
+                  <input type="text" class="gameStatus"><div class="uk-inline">
+                    <button class="uk-button uk-button-default" type="button">
+                      <span uk-icon="icon:  triangle-down"></span>
+                    </button>
+                    <div
+                      uk-dropdown="mode: click; boundary: ! .uk-button-group; boundary-align: true;"
+                    >
+                      <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#">Sort By</a></li>
+                        <li><a href="#">Currently Playing</a></li>
+                        <li><a href="#">Want to Play</a></li>
+                        <li><a href="#">Completed</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </td>
+              </div>
+              <div class="gameType"><td>Combat/Shooter</td></div>
+              <div class="hoursPlayed"><td>14 hrs and 28 minutes</td></div>
+              <div class="gameRating"><td>E</td></div>
+              <div><td><button class="updateBtn">update</button></td></div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <style> div.uk-overflow-auto.uk-margin-top {
+        padding-bottom: 200px;
+    }</style>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/playlist.js"></script>
