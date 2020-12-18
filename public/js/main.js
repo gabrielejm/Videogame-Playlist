@@ -1,10 +1,8 @@
-$(document).ready(function () {
+$(document).ready(() => {
     const searchBtn = $("")
     const addBtn = $("")
     const game = $("")
-    const status = $("")
     const user = localStorage.getItem("user")
-
 
     $(".input").blur(function () {
         localStorage.setItem("Teams", $(this).val());
@@ -18,6 +16,7 @@ $(document).ready(function () {
     })
 
     addBtn.on("click", () => {
+        console.log("Button clicked")
         $.post(`/api/user_data/list/${user}`)
         .then(() => {
             alert(`${game} added to List`)
