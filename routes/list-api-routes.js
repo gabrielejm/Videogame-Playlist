@@ -2,17 +2,17 @@ const db = require("../models");
 
 module.exports = app => {
   // Loads User's Full List
-  const loadPage = () => {app.get("/api/user_data/:user", (req, res) => {
-    db.List.findAll({where: { user_id: req.params.user
-    }}).then(dbList => {
+  app.get("/api/user_data/:user", (req, res) => {
+     db.List.findAll({where: { userId: req.params.user}})
+    .then(dbList => {
       res.json(dbList)
     } )
-  })}
+  })
 
   // Loads User's List by Specified Status
   app.get("/api/user_data/:user/:status", (req, res) => {
     db.List.findAll({where: {
-      user: req.params.user,
+      userId: req.params.user,
       status: req.params.status
     }}).then(dbList => {
       res.json(dbList)
@@ -45,38 +45,34 @@ module.exports = app => {
   })
 
   // Posts game to List table and loads User's List
-  app.post("/api/user_data/list", (req, res) => {
+  app.post("/api/user_data/list/:user", (req, res) => {
     db.List.create({
       title: req.body.title,
       status: req.body.status,
-      user: req.body.user,
+      userId: req.params.user,
       type: req.body.type
     })
       .then(() => {
-        loadPage()
+        $.get(`/api/user_data/${req.params.user}`)
       })
-      .catch(err => {
-        res.status(401).json(err);
-      });
+    
   });
 
   // Deletes game from List table and load's User's List
-  app.delete("/api/user_data/list", (req, res) => {
+  app.delete("/api/user_data/list/:user", (req, res) => {
     db.List.destroy(
       {
         where: {
           title: req.body.title,
-          user_id: req.body.user
+          userId: req.params.user
         },
       },
       console.log("deleting game...")
     )
       .then(() => {
-        loadPage()
+        $.get(`/api/user_data/${req.params.user}`)
         console.log("user data updated!");
       })
-      .catch(err => {
-        res.status(401).json(err);
-      });
+      
   });
 };
