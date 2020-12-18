@@ -2,7 +2,7 @@ module.exports = {
   development: {
     username: "root",
     password: process.env.DB_PASSWORD,
-    database: "Videogamelist",
+    database: "videogamelist",
     host: "127.0.0.1",
     dialect: "mysql",
   },
@@ -18,4 +18,3 @@ module.exports = {
     dialect: "mysql",
   },
 };
-
