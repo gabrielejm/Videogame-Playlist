@@ -1,19 +1,8 @@
 $(document).ready(() => {
-    const searchBtn = $("")
+    const searchBtn = $("#run-search")
     const addBtn = $("")
-    const game = $("")
+    const game = $("#game-search").val()
     const user = localStorage.getItem("user")
-
-    $(".input").blur(function () {
-        localStorage.setItem("Teams", $(this).val());
-
-        function searchGames() {  
-            document.write ("Search Games")  
-         }  
-
-        //Divs for description and rating
-        const description = $(`   <div id= 'match1'>`)
-    })
 
     addBtn.on("click", () => {
         console.log("Button clicked")
@@ -22,5 +11,19 @@ $(document).ready(() => {
             alert(`${game} added to List`)
         })
     })
-})
 
+    searchBtn.on("click", function(event) {
+        event.preventDefault();
+        //get value of the input box when you click run search
+        let APIKey = "830ae949e6554aadae74c234f1e467ee";
+        let queryUrl = `https://api.rawg.io/api/games?key=${APIKey}&search=${game}`;
+        
+        $.ajax({
+        method: "GET",
+        url: queryUrl
+        }).then( function(data){
+            console.log("game: ", game)
+            console.log("data: ", data)         
+        })
+    })
+})
