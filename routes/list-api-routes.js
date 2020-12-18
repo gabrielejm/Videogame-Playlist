@@ -53,7 +53,8 @@ module.exports = app => {
       type: req.body.type
     })
       .then(() => {
-        $.get(`/api/user_data/${req.params.user}`)
+        res.send(200)
+        alert(`${req.body.title} has been added to your list.`)
       })
     
   });
@@ -70,7 +71,7 @@ module.exports = app => {
       console.log("deleting game...")
     )
       .then(() => {
-        $.get(`/api/user_data/${req.params.user}`)
+        res.send(200)
         console.log("user data updated!");
       })
       
