@@ -2,6 +2,7 @@ $(document).ready(() => {
   const searchBtn = $("#run-search");
   const addBtn = $("");
   const user = localStorage.getItem("user");
+  let currentGame;
 
   addBtn.on("click", () => {
     console.log("Button clicked");
@@ -48,11 +49,5 @@ $(document).ready(() => {
       $("#game-status").append(statusDropDown);
       $("#game-rating").text(`Global Rating: ${rating}`);
     });
-  });
-  $("#add-btn").on("click", () => {
-    $("#game-title");
-    $("#game-img");
-    $("#game-status");
-    $("#game-rating");
   });
 });
