@@ -1,6 +1,6 @@
-$(document).ready(() => {
+
   const searchBtn = $("#run-search");
-  const addBtn = $("");
+  const addBtn = $("#addBtn");
   const user = localStorage.getItem("user");
   let currentGame;
 
@@ -50,4 +50,3 @@ $(document).ready(() => {
       $("#game-rating").text(`Global Rating: ${rating}`);
     });
   });
-});
