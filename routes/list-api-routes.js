@@ -20,37 +20,46 @@ module.exports = app => {
   })
 
   // Updates the Status of the selected game
-  app.put("/api/game", (req, res) => {
-    db.List.update(req.body.status, 
-      {where: { id: req.body.id}}).then(dbList => {
+  app.put("/api/game/:id", (req, res) => {
+    db.List.update({status: req.body.status}, 
+      {where: { id: req.params.id}}).then(dbList => {
         res.json(dbList)
-      } )
+        res.send(200)
+      })
+  })
+
+  // Updates the Type of the selected game
+  app.put("/api/game/:id", (req, res) => {
+    db.List.update(req.body.type, 
+      {where: { id: req.params.id}}).then(dbList => {
+        res.json(dbList)
+      })
   })
 
   // Updates the Rating of the selected game 
-  app.put("/api/game", (req, res) => {
+  app.put("/api/game/:id", (req, res) => {
     db.List.update(req.body.rating, 
-      {where: {id : req.body.id}}).then(dbList => {
+      {where: {id : req.params.id}}).then(dbList => {
         res.json(dbList)
       })
   })
 
   // Updates the Hours Played of the selected game
-  app.put("/api/game", (req, res) => {
+  app.put("/api/game/:id", (req, res) => {
     db.List.update(req.body.hoursPlayed, 
-      {where: {id: req.body.id
+      {where: {id: req.params.id
     }}).then(dbList => {
       res.json(dbList)
     })
   })
 
   // Posts game to List table and loads User's List
-  app.post("/api/user_data/list/:user", (req, res) => {
+  app.post("/api/user_data/list/:user/:title/:status/:rating", (req, res) => {
     db.List.create({
-      title: req.body.title,
-      status: req.body.status,
+      title: req.params.title,
+      status: req.params.status,
       UserId: req.params.user,
-      type: req.body.type
+      rating: req.params.type
     })
       .then(() => {
         res.send(200)
@@ -60,12 +69,10 @@ module.exports = app => {
   });
 
   // Deletes game from List table and load's User's List
-  app.delete("/api/user_data/list/:user", (req, res) => {
-    db.List.destroy(
-      {
+  app.delete("/api/user_data/list/:id", (req, res) => {
+    db.List.destroy({
         where: {
-          title: req.body.title,
-          UserId: req.params.user
+          id: req.params.id,
         },
       },
       console.log("deleting game...")
