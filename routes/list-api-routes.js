@@ -54,12 +54,12 @@ module.exports = app => {
   })
 
   // Posts game to List table and loads User's List
-  app.post("/api/user_data/list/:user", (req, res) => {
+  app.post("/api/user_data/list/:user/:title/:status/:rating", (req, res) => {
     db.List.create({
-      title: req.body.title,
-      status: req.body.status,
+      title: req.params.title,
+      status: req.params.status,
       UserId: req.params.user,
-      type: req.body.type
+      rating: req.params.type
     })
       .then(() => {
         res.send(200)

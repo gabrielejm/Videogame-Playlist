@@ -85,7 +85,7 @@ const renderSpecified = () => {
 const renderTable = (data) => {
   for (let i = 0; i < data.length; i++) {
     //Appending Row variables
-    let newRow = $("<tr>");
+    let newRow = $("<tr>")
     let title = $("<td>");
     let status = $("<td>");
     let type = $("<td>");
