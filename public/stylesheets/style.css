@@ -25,3 +25,37 @@ form.login {
   position: fixed;
   top: 365px;
 }
+
+#main-header {
+  margin-bottom: 50px;
+}
+
+#run-search {
+  padding: 25px 50px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+#sorting-header {
+  margin-left: 5px;
+}
+
+#main-navbar {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+#login-form {
+  margin-top: 25px;
+}
+
+#signup-form {
+  margin-top: 25px;
+}
+
