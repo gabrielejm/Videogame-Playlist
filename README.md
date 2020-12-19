@@ -35,6 +35,9 @@ Conor McKoy, Danielle Wisen, Dairon Ferrer, Ben Cummings, Justin Gabriele
 
 Have some questions? Contact us at: 
 
+### Deployment
+https://videogame-playlist.herokuapp.com/login.html
+
 Github links and emails:
 
 [Conor McKoy's Github](https://github.com/mckoyc94), mckoyc@gmail.com
