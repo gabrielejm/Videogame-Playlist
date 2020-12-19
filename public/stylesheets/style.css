@@ -11,3 +11,17 @@ form.login {
 .adjust-margin {
   margin-left: 10px;
 }
+
+#welcome-user {
+  position: fixed;
+  top: 100px;
+}
+
+#main-link {
+  position: fixed;
+}
+
+#playlist-link {
+  position: fixed;
+  top: 365px;
+}
