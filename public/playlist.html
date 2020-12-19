@@ -53,22 +53,7 @@
       <b>Here you can find all the videogames you have added to your playlist, along with other useful information.</b>
     </h2>
 
-    <h3>Sorting Options:</h3>
-
-    <div class="uk-button-group">
-      <button class="uk-button uk-button-default">Sort By</button>
-      <div class="uk-inline">
-        <button class="uk-button uk-button-default" type="button"><span uk-icon="icon:  triangle-down"></span></button>
-        <div uk-dropdown="mode: click; boundary: ! .uk-button-group; boundary-align: true;">
-          <ul class="uk-nav uk-dropdown-nav">
-            <li class="uk-active"><a href="#">Sort By</a></li>
-            <li><a href="#">Currently Playing</a></li>
-            <li><a href="#">Want to Play</a></li>
-            <li><a href="#">Completed</a></li>
-            <li></li>
-          </ul>
-        </div>
-
+    <h3 id="sorting-header">Sorting Options:</h3>
 
     <select class = "drop">
       <option class="uk-active">All</option>
@@ -83,7 +68,7 @@
 
     <div class="container">
       <div class="uk-overflow-auto uk-margin-top">
-        <table class="uk-table uk-table-middle uk-table-divider">
+        <table class="uk-table uk-table-middle uk-table-divider uk-table-large">
           <thead>
             <tr>
               <th>Title</th>
