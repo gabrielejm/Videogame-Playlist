@@ -4,7 +4,8 @@ $(document).ready(()=>{
     const addType = $("")
     const updateGame = $("")
     const designatedList = $("")
-    const pickListBtn = $("")
+    let gamesList = $(".table-body")
+    const pickListBtn = $(".drop")
     const user = localStorage.getItem("user")
     
     renderList = () => {
@@ -15,17 +16,21 @@ $(document).ready(()=>{
     }
     
     const renderSpecified = () => {
-        
-        $.get(`/api/user_data/${user}/`)
-        .then(data => {
-            renderTable(data)
-        })
+        console.log("changed")
+        let currentStatus = pickListBtn.val()
+        gamesList.empty()
+        if (currentStatus === "All"){
+            renderList()
+        } else{
+            $.get(`/api/user_data/${user}/${currentStatus}`)
+            .then(data => {
+                renderTable(data)
+            })
+        }
     }
     
     const renderTable = (data) =>{
         for (let i = 0; i < data.length; i++){
-            // page variables
-            let gamesList = $(".table-body")
             //Appending Row variables
             let newRow = $("<tr>")
             let title = $("<td>")
@@ -49,7 +54,7 @@ $(document).ready(()=>{
             let ratingInput = $("<input>").attr("id",`rating-${data[i].id}`).css({'width' : '25px'})
             let hoursInput = $("<input>").attr("id",`hours-${data[i].id}`).css({'width' : '25px'})
             let deleteBtn = $("<button>").text("Delete").attr("id",`Delete-${data[i].id}`)
-            let updateBtn = $("<button>").text("Update").attr("id",`Update=${data[i].id}`)
+            let updateBtn = $("<button>").text("Update").attr("id",`Update-${data[i].id}`)
 
             //Add title
             title.text(data[i].title)
@@ -107,6 +112,6 @@ $(document).ready(()=>{
         }
     }
     
-    pickListBtn.on("click", renderSpecified)
+    pickListBtn.on("change", () => renderSpecified())
     renderList() 
 })
