@@ -31,35 +31,6 @@
             <li><a href="login.html">Log Off</a></li>
         </ul>
       </div>
-
-      <div class="nav-overlay uk-navbar-right">
-        <a
-          class="uk-navbar-toggle"
-          uk-search-icon
-          uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
-          href="#"
-        ></a>
-      </div>
-
-      <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
-        <div class="uk-navbar-item uk-width-expand">
-          <form class="uk-search uk-search-navbar uk-width-1-1">
-            <input
-              class="uk-search-input"
-              type="search"
-              placeholder="Search for a videogame..."
-              autofocus
-            />
-          </form>
-        </div>
-
-        <a
-          class="uk-navbar-toggle"
-          uk-close
-          uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
-          href="#"
-        ></a>
-      </div>
     </nav>
 
     <container id="headers">
@@ -103,20 +74,20 @@
     </div>
     <div>
         <div class="uk-card uk-card-large uk-card-secondary uk-card-body uk-margin-xlarge-top">
-            <h3 id="game-release" class="uk-card-title">Released:</h3>
+            <h3 id="game-status" class="uk-card-title">Play Status: </h3>
             
         </div>
     </div>
     <div>
         <div class="uk-card uk-card-large uk-card-secondary uk-card-body uk-margin-xlarge-top">
-            <h3 id="game-rating" class="uk-card-title">Rating:</h3>
+            <h3 id="game-rating" class="uk-card-title">Global Rating:</h3>
             
         </div>
     </div>
 </div>
 
 
-<button class="uk-button-large uk-button-primary uk-margin-small-top">Add Game to your Playlist</button>
+<button id="addBtn" class="uk-button-large uk-button-primary uk-margin-small-top">Add Game to your Playlist</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src= "js/main.js"></script>
 </body>
