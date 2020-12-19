@@ -14,7 +14,7 @@ $(document).ready(() => {
     event.preventDefault();
     $("#game-title").empty();
     $("#game-img").empty();
-    $("#game-release").empty();
+    $("#game-status").empty();
     $("#game-rating").empty();
     //get value of the input box when you click run search
     const game = $("#search-game")
@@ -44,6 +44,7 @@ $(document).ready(() => {
 
       $("#game-title").text(title);
       $("#game-img").append(image);
+      $("#game-status").text("Play Status: ");
       $("#game-status").append(statusDropDown);
       $("#game-rating").text(`Global Rating: ${rating}`);
     });
