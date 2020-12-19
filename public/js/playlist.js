@@ -7,7 +7,7 @@ let gamesList = $(".table-body");
 const pickListBtn = $(".drop");
 const user = localStorage.getItem("user");
 
-//update and delete function 
+//update and delete function
 const do_thing = () => {
   console.log("hello world");
 };
@@ -43,7 +43,7 @@ const renderTable = (data) => {
     //Sub Row Variables
     let statusDropDown = $("<select>")
       .attr("id", `status-${data[i].id}`)
-      .attr("change", `do_thing()`);
+      .attr("onclick", `do_thing()`);
     let playing = $("<option>").text("Currently Playing");
     let completed = $("<option>").text("Completed");
     let wantToPlay = $("<option>").text("Want to Play");
