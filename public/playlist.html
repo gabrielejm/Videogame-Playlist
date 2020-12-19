@@ -55,12 +55,28 @@
 
     <h3>Sorting Options:</h3>
 
+    <div class="uk-button-group">
+      <button class="uk-button uk-button-default">Sort By</button>
+      <div class="uk-inline">
+        <button class="uk-button uk-button-default" type="button"><span uk-icon="icon:  triangle-down"></span></button>
+        <div uk-dropdown="mode: click; boundary: ! .uk-button-group; boundary-align: true;">
+          <ul class="uk-nav uk-dropdown-nav">
+            <li class="uk-active"><a href="#">Sort By</a></li>
+            <li><a href="#">Currently Playing</a></li>
+            <li><a href="#">Want to Play</a></li>
+            <li><a href="#">Completed</a></li>
+            <li></li>
+          </ul>
+        </div>
+
+
     <select class = "drop">
       <option class="uk-active">All</option>
       <option>Currently Playing</option>
       <option>Want to Play</option>
       <option>Completed</option>
     </select>
+
 
       </div>
     </div>
