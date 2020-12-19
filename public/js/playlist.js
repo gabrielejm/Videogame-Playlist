@@ -1,16 +1,68 @@
-const addRating = $("");
-const addHoursPlayed = $("");
-const addType = $("");
-const updateGame = $("");
-const designatedList = $("");
-let gamesList = $(".table-body");
+const gamesList = $(".table-body");
 const pickListBtn = $(".drop");
 const user = localStorage.getItem("user");
 
+$.delete = function(url, data, callback, type){
+ 
+    if ( $.isFunction(data) ){
+      type = type || callback,
+          callback = data,
+          data = {}
+    }
+   
+    return $.ajax({
+      url: url,
+      type: 'DELETE',
+      success: callback,
+      data: data,
+      contentType: type
+    });
+}
+
+$.put = function(url, data, callback, type){
+ 
+    if ( $.isFunction(data) ){
+      type = type || callback,
+      callback = data,
+      data = {}
+    }
+   
+    return $.ajax({
+      url: url,
+      type: 'PUT',
+      success: callback,
+      data: data,
+      contentType: type
+    });
+}
+
+
+
 //update and delete function
-const do_thing = () => {
-  console.log("hello world");
+const do_thing = function(thing) {
+    let whatToChange = thing.split("-")[0]
+    let id = thing.split("-")[1]
+    console.log(whatToChange);
+    console.log(id)
+    if (whatToChange === "delete"){
+        $.delete(`/api/user_data/list/${id}`).then(()=>{
+            console.log("it worked")
+            gamesList.empty()
+            renderList()
+        })
+    }
 };
+
+const update = (thing) => {
+    let whatToChange = thing.split("-")[0]
+    let id = thing.split("-")[1]
+    console.log(whatToChange);
+    console.log(id)
+        $.post(`/api/game/${id}`).then(()=>{
+            gamesList.empty()
+            renderList()
+        })
+}
 
 const renderList = () => {
   $.get(`/api/user_data/${user}`).then((data) => {
@@ -41,30 +93,18 @@ const renderTable = (data) => {
     let ratings = $("<td>");
     let buttons = $("<td>");
     //Sub Row Variables
-    let statusDropDown = $("<select>")
-      .attr("id", `status-${data[i].id}`)
-      .attr("onclick", `do_thing()`);
+    let statusDropDown = $("<select>").attr("id", `status-${data[i].id}`).attr("onchange", `update("status-${data[i].id}")`);
     let playing = $("<option>").text("Currently Playing");
     let completed = $("<option>").text("Completed");
     let wantToPlay = $("<option>").text("Want to Play");
 
-    let typeDropDown = $("<select>").attr("id", `type-${data[i].id}`);
+    let typeDropDown = $("<select>").attr("id", `type-${data[i].id}`).attr("onchange", `do_thing("type-${data[i].id}")`);
     let singlePlayer = $("<option>").text("Single Player");
     let multiPlayer = $("<option>").text("Multiplayer");
 
-    let ratingInput = $("<input>")
-      .attr("id", `rating-${data[i].id}`)
-      .css({ width: "25px" });
-    let hoursInput = $("<input>")
-      .attr("id", `hours-${data[i].id}`)
-      .css({ width: "25px" });
-    let deleteBtn = $("<button>")
-      .text("Delete")
-      .attr("id", `Delete-${data[i].id}`);
-    let updateBtn = $("<button>")
-      .text("Update")
-      .attr("id", `Update-${data[i].id}`)
-      .attr("onclick", `do_thing()`);
+    let ratingInput = $("<input>").attr("id", `rating-${data[i].id}`).css({ width: "25px" }).attr("onchange", `do_thing("rating-${data[i].id}")`);
+    let hoursInput = $("<input>").attr("id", `hoursPlayed-${data[i].id}`).css({ width: "25px" }).attr("onchange", `do_thing("hoursPlayed-${data[i].id}")`);
+    let deleteBtn = $("<button>").text("Delete").attr("id", `delete-${data[i].id}`).attr("onclick", `do_thing("delete-${data[i].id}")`)
 
     //Add title
     title.text(data[i].title);
@@ -106,7 +146,6 @@ const renderTable = (data) => {
     ratings.append("/5");
 
     //Add Buttons to Row
-    buttons.append(updateBtn);
     buttons.append(deleteBtn);
 
     //Appends Game Data to Row
