@@ -49,4 +49,10 @@ $(document).ready(() => {
       $("#game-rating").text(`Global Rating: ${rating}`);
     });
   });
+  $("#add-btn").on("click", () => {
+    $("#game-title");
+    $("#game-img");
+    $("#game-status");
+    $("#game-rating");
+  });
 });
