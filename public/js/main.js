@@ -1,29 +1,39 @@
 $(document).ready(() => {
-    const searchBtn = $("#run-search")
-    const addBtn = $("")
-    const user = localStorage.getItem("user")
-    
-    addBtn.on("click", () => {
-        console.log("Button clicked")
-        $.post(`/api/user_data/list/${user}`)
-        .then(() => {
-            alert(`${game} added to List`)
-        })
-    })
-    
-    searchBtn.on("click", function(event) {
-        event.preventDefault();
-        //get value of the input box when you click run search
-        const game = $("#search-game").val().split(" ").join("-")
-        let APIKey = "830ae949e6554aadae74c234f1e467ee";
-        let queryUrl = `https://api.rawg.io/api/games?key=${APIKey}&search=${game}`;
-        
-        $.ajax({
-        method: "GET",
-        url: queryUrl
-        }).then( function(data){
-                let title = data.results[0].name
-                let rating = `${data.results[0].rating} / 5`         
-        })
-    })
-})
+  const searchBtn = $("#run-search");
+  const addBtn = $("");
+  const user = localStorage.getItem("user");
+
+  addBtn.on("click", () => {
+    console.log("Button clicked");
+    $.post(`/api/user_data/list/${user}`).then(() => {
+      alert(`${game} added to List`);
+    });
+  });
+
+  searchBtn.on("click", function(event) {
+    event.preventDefault();
+    //get value of the input box when you click run search
+    const game = $("#search-game")
+      .val()
+      .split(" ")
+      .join("-");
+    let APIKey = "830ae949e6554aadae74c234f1e467ee";
+    let queryUrl = `https://api.rawg.io/api/games?key=${APIKey}&search=${game}`;
+
+    $.ajax({
+      method: "GET",
+      url: queryUrl,
+    }).then(function(data) {
+      let title = data.results[0].name;
+      let release = data.results[0].released;
+      let rating = `${data.results[0].rating} / 5`;
+      let imageURL = data.results[0].background_image;
+      let image = $("<img>").attr("src", imageURL);
+
+      $("#game-title").text(title);
+      $("#game-img").append(image);
+      $("#game-release").text(release);
+      $("#game-rating").text(rating);
+    });
+  });
+});

@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = app => {
   // Loads User's Full List
   app.get("/api/user_data/:user", (req, res) => {
-     db.List.findAll({where: { userId: req.params.user}})
+     db.List.findAll({where: { UserId: req.params.user}})
     .then(dbList => {
       res.json(dbList)
     } )
@@ -12,7 +12,7 @@ module.exports = app => {
   // Loads User's List by Specified Status
   app.get("/api/user_data/:user/:status", (req, res) => {
     db.List.findAll({where: {
-      userId: req.params.user,
+      UserId: req.params.user,
       status: req.params.status
     }}).then(dbList => {
       res.json(dbList)
@@ -49,7 +49,7 @@ module.exports = app => {
     db.List.create({
       title: req.body.title,
       status: req.body.status,
-      userId: req.params.user,
+      UserId: req.params.user,
       type: req.body.type
     })
       .then(() => {
@@ -65,7 +65,7 @@ module.exports = app => {
       {
         where: {
           title: req.body.title,
-          userId: req.params.user
+          UserId: req.params.user
         },
       },
       console.log("deleting game...")
