@@ -12,6 +12,10 @@ $(document).ready(() => {
 
   searchBtn.on("click", function(event) {
     event.preventDefault();
+    $("#game-title").empty();
+    $("#game-img").empty();
+    $("#game-release").empty();
+    $("#game-rating").empty();
     //get value of the input box when you click run search
     const game = $("#search-game")
       .val()
