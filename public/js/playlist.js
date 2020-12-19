@@ -33,7 +33,7 @@ const renderSpecified = () => {
 const renderTable = (data) => {
   for (let i = 0; i < data.length; i++) {
     //Appending Row variables
-    let newRow = $("<tr>");
+    let newRow = $("<tr>")
     let title = $("<td>");
     let status = $("<td>");
     let type = $("<td>");
@@ -60,10 +60,12 @@ const renderTable = (data) => {
       .css({ width: "25px" });
     let deleteBtn = $("<button>")
       .text("Delete")
-      .attr("id", `Delete-${data[i].id}`);
+      .attr("id", `Delete`)
+      .attr("value", `${data[i].id}`);
     let updateBtn = $("<button>")
       .text("Update")
-      .attr("id", `Update-${data[i].id}`)
+      .attr("value", `${data[i].id}`)
+      .attr("id", `Update`)
       .attr("onclick", `do_thing()`);
 
     //Add title
